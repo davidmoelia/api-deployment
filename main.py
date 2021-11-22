@@ -1,13 +1,13 @@
 import json
 from fastapi import FastAPI, HTTPException
 
-with open("menu.json", "r") as read_file:
+with open("pesanan.json", "r") as read_file:
     data = json.load(read_file)
 app = FastAPI()
 
 @app.get('/')
 def root():
-    return{'Menu':'Item'}
+    return{'pesanan':'Item'}
 
 @app.get('/menu/{item_id}')
 async def read_menu(item_id: int):
